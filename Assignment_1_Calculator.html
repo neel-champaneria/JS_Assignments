@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="author" content="Neel Champaneria">
+  <meta name="description" content="JS Assignent 1 Calculator">
+  <meta name="keyword" content="form, input, button, JS">
+  <meta http-equiv="content-type" content="text/html">
+  <title>Assignment 1 Calculator</title>
+  
+  <script>
+      'use strict';
+      function addition(){
+          let n1 = Number.parseFloat(document.getElementById("num1").value);
+          let n2 = Number.parseFloat(document.getElementById("num2").value);
+          let ans = (n1 + n2);
+          document.getElementById("ans").textContent= "Answer of Addition is " + ans;
+      }
+      function subtraction(){
+          let n1 = Number.parseFloat(document.getElementById("num1").value);
+          let n2 = Number.parseFloat(document.getElementById("num2").value);
+          let ans = (n1 - n2);
+          document.getElementById("ans").textContent= "Answer of Substraction is " + ans;
+      }
+      function multiplication(){
+          let n1 = Number.parseFloat(document.getElementById("num1").value);
+          let n2 = Number.parseFloat(document.getElementById("num2").value);
+          let ans = (n1 * n2);
+          document.getElementById("ans").textContent= "Answer of Multiplication is " + ans;
+      }
+      function division(){
+          let n1 = Number.parseFloat(document.getElementById("num1").value);
+          let n2 = Number.parseFloat(document.getElementById("num2").value);
+
+          if(n2 === 0){
+            document.getElementById("ans").textContent= "You can not divide any number with 0";
+          }else{
+            let ans = (n1 / n2).toFixed(2);
+            document.getElementById("ans").textContent= "Answer of Division is " + ans;
+          }
+      }
+      function modulo(){
+          let n1 = Number.parseFloat(document.getElementById("num1").value);
+          let n2 = Number.parseFloat(document.getElementById("num2").value);
+
+          if(n2 === 0){
+            document.getElementById("ans").textContent= "You can not divide any number with 0. Not possible to  calculate remainder.";
+          }else{
+            let ans = (n1 % n2);
+            document.getElementById("ans").textContent= "Answer of Modulo is " + ans;
+          }
+      }
+  </script>
+</head>
+
+<body>
+    <h1 id="hw">Simple Calculator</h1>
+    <form>
+        <label>Number 1: <input type="number" id="num1" name="number_1"></input></label>
+        <br><br>
+        <label>Number 2: <input type="number" id="num2" name="nummer_2"></input></label>
+        <br><br>
+        <input type="button" value=" + " onclick="addition()"></input>
+        <input type="button" value=" - " onclick="subtraction()"></input>
+        <input type="button" value=" * " onclick="multiplication()"></input>
+        <input type="button" value=" / " onclick="division()"></input>
+        <input type="button" value=" % " onclick="modulo()"></input>
+        <h2 id="ans">Answer:</h2>
+    </form>
+</body>
+
+</html>
