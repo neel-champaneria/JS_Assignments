@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Neel Champaneria">
+    <meta name="description" content="JS Assignent 3 Data Edit">
+    <meta name="keyword" content="form, input, button, JS">
+    <meta http-equiv="content-type" content="text/html">
+    <title>Assignment 3 Data Input</title>
+    <script src="Assignment_3_edit.js"></script>
+</head>
+<body>
+    <form id="idForm" onsubmit="event.preventDefault(); searchArray();" style="display: block;">
+        <label>Enter Employee ID: <input type="number" id="edEmpId"></input></label>
+        <input type="submit" id="edSubit" value="Search id">
+    </form>
+
+    <br><br>
+    <h3 id="searchResult" style="display: none;"></h3>
+    <br><br>
+    <form id="edForm" style="display: none;" onsubmit="event.preventDefault(); editInfo();">
+        <label>Employee Name: <input type="text" id="edName" name="empName"></input></label>
+        <br><br>
+        <label>Address: <br><textarea id="edAddress" name="edAddress" rows="6" column="25"></textarea></label>
+        <br><br>
+        <label>Designation: <input type="text" id="edDesignation" name="empDesignation"></input></label>
+        <br><br>
+        <input type="submit" id="submit" value="Enter Data"> 
+    </form>
+    <h3 id="edited" style="display: none;"></h3>
+</body>
+</html>

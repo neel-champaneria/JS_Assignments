@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Neel Champaneria">
+    <meta name="description" content="JS Assignent 3 Data View">
+    <meta name="keyword" content="form, input, button, JS">
+    <meta http-equiv="content-type" content="text/html">
+    <title>Assignment 3 Data View</title>
+</head>
+<body>
+    <table id="table" frame="border"  rules="all">
+    </table>
+    <h3 id="notice" style="display: none;"></h3>
+    <script>
+        let list =  JSON.parse(localStorage.getItem("myArray"));
+        let cols = [];
+
+        if(list===null){
+            document.getElementById("notice").innerText="You have to first enter data to see table.";
+            document.getElementById("notice").style.display="block";
+        }else{
+            for (let i = 0; i < list.length; i++) { 
+                for (let k in list[i]) { 
+                    if (cols.indexOf(k) === -1) {           
+                        // Push all keys to the array 
+                        cols.push(k); 
+                    } 
+                } 
+            } 
+            
+            // Create a table element 
+            let table = document.createElement("table"); 
+                // Create table row tr element of a table 
+            let tr = table.insertRow(-1); 
+                    
+            for (let i = 0; i < cols.length; i++) { 
+                        
+                // Create the table header th element 
+                let theader = document.createElement("th"); 
+                theader.innerHTML = cols[i]; 
+                        
+                // Append columnName to the table row 
+                tr.appendChild(theader); 
+            }
+            
+            // Adding the data to the table 
+            for (var i = 0; i < list.length; i++) { 
+                      
+                // Create a new row 
+                trow = table.insertRow(-1); 
+                for (var j = 0; j < cols.length; j++) { 
+                    var cell = trow.insertCell(-1); 
+                            
+                    // Inserting the cell at particular place 
+                    cell.innerHTML = list[i][cols[j]]; 
+                } 
+            }
+            
+            let el = document.getElementById("table"); 
+            el.innerHTML = ""; 
+            el.appendChild(table);
+        }
+
+    </script>
+</body>
+</html>

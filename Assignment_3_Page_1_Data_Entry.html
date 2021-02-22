@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Neel Champaneria">
+    <meta name="description" content="JS Assignent 3 Data Entry">
+    <meta name="keyword" content="form, input, button, JS">
+    <meta http-equiv="content-type" content="text/html">
+    <title>Assignment 3 Data Entry</title>
+    <script src="Assignment_3_enter.js"></script>
+</head>
+<body>
+    <h1>Employee Details</h1>
+    <h3>Employee ID will be assign Automatically</h3>
+    <form onsubmit="event.preventDefault(); data_entry(); ">
+        <label>Employee Name: <input type="text" id="name" name="empName"></input></label>
+        <br><br>
+        <label>Address: <br><textarea id="address" name="empAddress" rows="6" column="25"></textarea></label>
+        <br><br>
+        <label>Designation: <input type="text" id="designation" name="empDesignation"></input></label>
+        <br><br>
+        <input type="submit" id="submit" value="Enter Data"> 
+        <button type="reset" id="rst">Reset</button>
+    </form>
+    <h3 id="eid" style="display: none;"></h3>
+</body>
+</html>
